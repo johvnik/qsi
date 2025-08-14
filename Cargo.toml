@@ -1,0 +1,32 @@
+[package]
+name = "qsi"
+version = "0.1.0"
+edition = "2024"
+description = ""
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/johvnik/qsi"
+readme = "README.md"
+keywords = ["3d", "graphics", "ecs", "wgpu", "simulation"]
+categories = ["simulation", "physics", "graphics"]
+
+[lib]
+name = "qsi"
+path = "src/lib.rs"
+
+[[example]]
+name = "basic_grid"
+path = "examples/basic_grid.rs"
+
+[dependencies]
+anyhow = "1.0"
+bytemuck = { version = "1.23", features = ["derive"] }
+cgmath = "0.18"
+env_logger = "0.11"
+log = "0.4"
+pollster = "0.4"
+wgpu = "26.0"
+winit = "0.30"
+
+[dev-dependencies]
+env_logger = "0.11"
+pollster = "0.4"
