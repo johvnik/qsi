@@ -11,6 +11,9 @@ pub use crate::App;
 // ECS
 pub use crate::ecs::{Component, EntityBuilder, EntityId, World};
 
+// Input
+pub use crate::input::InputState;
+
 // Math
 pub use crate::math::{Matrix4, Point3, Transform, Vector3};
 

@@ -131,12 +131,6 @@ impl World {
     }
 }
 
-impl Default for World {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
 /// Builder pattern for creating entities with components
 pub struct EntityBuilder<'a> {
     world: &'a mut World,
