@@ -17,6 +17,12 @@ pub use crate::input::InputState;
 // Math
 pub use crate::math::{Matrix4, Point3, Transform, Vector3};
 
+// Time
+pub use crate::time::TimeState;
+
+// Renderer
+pub use crate::graphics::Renderer;
+
 // Components
 pub use crate::camera::Camera;
 pub use crate::graphics::Mesh;
