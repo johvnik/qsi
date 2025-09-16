@@ -2,7 +2,7 @@
 
 use crate::ecs::{Component, EntityId, World};
 use crate::math::{Matrix4, Point3, Transform, Vector3};
-use cgmath::{perspective, Deg, EuclideanSpace};
+use cgmath::{Deg, EuclideanSpace, perspective};
 use winit::event::{ElementState, MouseButton};
 
 /// Camera component that defines viewing parameters

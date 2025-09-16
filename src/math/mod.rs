@@ -1,7 +1,7 @@
 //! Math utilities and components
 
 use crate::ecs::Component;
-pub use cgmath::{perspective, Deg, EuclideanSpace, Matrix4, Point3, Rad, SquareMatrix, Vector3};
+pub use cgmath::{Deg, EuclideanSpace, Matrix4, Point3, Rad, SquareMatrix, Vector3, perspective};
 
 /// Transform component for position, rotation, and scale
 #[derive(Debug, Clone)]

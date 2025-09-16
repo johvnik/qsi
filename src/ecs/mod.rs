@@ -118,7 +118,7 @@ impl World {
         self.entities.retain(|&e| e != entity);
 
         // Remove from all component storages
-        for storage in self.components.values_mut() {
+        for _storage in self.components.values_mut() {
             // This is a bit of a hack since we can't know the exact type
             // In a more sophisticated ECS, you'd track which components an entity has
             // For now, we'll just leave orphaned components (they won't be accessible)

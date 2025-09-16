@@ -4,7 +4,7 @@
 use crate::ecs::{Component, World};
 use crate::math::{Matrix4, Transform};
 use anyhow::{Context, Result};
-use cgmath::{perspective, Deg, SquareMatrix};
+use cgmath::{Deg, SquareMatrix, perspective};
 use std::sync::Arc;
 use wgpu::util::DeviceExt;
 use winit::window::Window;

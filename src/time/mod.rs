@@ -83,7 +83,7 @@ impl TimeState {
 
         let total_time: Duration = self.frame_time_history.iter().sum();
         let average_frame_time = total_time.as_secs_f32() / self.frame_time_history.len() as f32;
-        
+
         if average_frame_time > 0.0 {
             1.0 / average_frame_time
         } else {
