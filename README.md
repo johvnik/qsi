@@ -1,5 +1,10 @@
 # QSi
 
+[![Tests](https://github.com/johvnik/qsi/actions/workflows/rust.yml/badge.svg)](https://github.com/johvnik/qsi/actions/workflows/rust.yml)
+[![Crates.io](https://img.shields.io/crates/v/qsi.svg)](https://crates.io/crates/qsi)
+[![License](https://img.shields.io/crates/l/qsi.svg)](https://github.com/johvnik/qsi/blob/main/LICENSE-MIT)
+[![Rust 1.70+](https://img.shields.io/badge/rust-1.70%2B-blue.svg)](https://rust-lang.org)
+
 A lightweight, transparent 3D simulation library with ECS architecture.  
 Built on wgpu and winit for cross-platform 3D graphics.
 
@@ -118,9 +123,7 @@ If you need these features, consider using **Bevy** instead:
 - Scene editor
 - Asset hot-reloading
 - Plugin architecture
-- Complex physics engine integration
-- Advanced ECS features (hierarchies, events, observers)
-- Multi-threading
+- Complex physics engine integration built-in
 - Platform-specific optimizations
 
 ## Dependencies
