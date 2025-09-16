@@ -71,6 +71,12 @@ struct AppState {
     time: time::TimeState,
 }
 
+impl Default for App {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl App {
     /// Create a new application
     pub fn new() -> Self {
@@ -226,7 +232,7 @@ impl AppState {
                             self.renderer.resize(size.width, size.height);
                         }
                         wgpu::SurfaceError::OutOfMemory => event_loop.exit(),
-                        _ => log::error!("Render error: {}", e),
+                        _ => log::error!("Render error: {e}"),
                     }
                 }
             }

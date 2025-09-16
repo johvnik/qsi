@@ -21,6 +21,12 @@ pub struct App {
     pub state: Option<State>,
 }
 
+impl Default for App {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl App {
     pub fn new() -> Self {
         Self { state: None }
@@ -43,6 +49,12 @@ pub struct World {
     entities: Vec<EntityId>,
     // Component storage - each component type gets its own HashMap
     components: HashMap<std::any::TypeId, Box<dyn std::any::Any>>,
+}
+
+impl Default for World {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl World {
@@ -835,7 +847,7 @@ impl ApplicationHandler for App {
                         state.resize(size.width, size.height);
                     }
                     Err(wgpu::SurfaceError::OutOfMemory) => event_loop.exit(),
-                    Err(e) => error!("Error during render: {}", e),
+                    Err(e) => error!("Error during render: {e}"),
                 }
             }
 
@@ -960,7 +972,7 @@ pub fn run() -> anyhow::Result<()> {
 
 fn main() {
     if let Err(error) = run() {
-        eprintln!("Error: {:?}", error);
+        eprintln!("Error: {error:?}");
         std::process::exit(1);
     }
 }

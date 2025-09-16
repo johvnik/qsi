@@ -19,6 +19,12 @@ pub struct World {
     components: HashMap<TypeId, Box<dyn Any + Send + Sync>>,
 }
 
+impl Default for World {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl World {
     /// Create a new empty world
     pub fn new() -> Self {
