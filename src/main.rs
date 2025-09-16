@@ -320,10 +320,10 @@ impl CameraController {
 
     /// Update the camera entity's transform
     fn update_camera_transform(&self, world: &mut World) {
-        if let Some(entity) = self.camera_entity {
-            if let Some(transform) = world.get_component_mut::<Transform>(entity) {
-                transform.position = self.position().to_vec();
-            }
+        if let Some(entity) = self.camera_entity
+            && let Some(transform) = world.get_component_mut::<Transform>(entity)
+        {
+            transform.position = self.position().to_vec();
         }
     }
 }
@@ -666,10 +666,10 @@ impl State {
         modifiers: ModifiersState,
     ) {
         // Exit with Ctrl+C
-        if let (KeyCode::KeyC, true) = (code, is_pressed) {
-            if modifiers.control_key() {
-                event_loop.exit();
-            }
+        if let (KeyCode::KeyC, true) = (code, is_pressed)
+            && modifiers.control_key()
+        {
+            event_loop.exit();
         }
     }
 

@@ -44,7 +44,7 @@ impl World {
     }
 
     /// Create an entity with a builder pattern
-    pub fn spawn(&mut self) -> EntityBuilder {
+    pub fn spawn(&mut self) -> EntityBuilder<'_> {
         let id = self.create_entity();
         EntityBuilder {
             world: self,

@@ -167,11 +167,11 @@ impl CameraController {
 
     /// Update the camera entity's transform in the world
     pub fn update_camera_transform(&self, world: &mut World) {
-        if let Some(entity) = self.camera_entity {
-            if let Some(transform) = world.get_component_mut::<Transform>(entity) {
-                // Just update position - the view matrix handles the look-at
-                transform.position = self.position().to_vec();
-            }
+        if let Some(entity) = self.camera_entity
+            && let Some(transform) = world.get_component_mut::<Transform>(entity)
+        {
+            // Just update position - the view matrix handles the look-at
+            transform.position = self.position().to_vec();
         }
     }
 
@@ -194,10 +194,10 @@ pub mod utils {
     /// Find the first active camera in the world
     pub fn find_active_camera(world: &World) -> Option<(EntityId, &Camera, &Transform)> {
         for (entity, camera) in world.query::<Camera>() {
-            if camera.is_active {
-                if let Some(transform) = world.get_component::<Transform>(entity) {
-                    return Some((entity, camera, transform));
-                }
+            if camera.is_active
+                && let Some(transform) = world.get_component::<Transform>(entity)
+            {
+                return Some((entity, camera, transform));
             }
         }
         None
